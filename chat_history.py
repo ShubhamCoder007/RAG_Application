@@ -1,6 +1,4 @@
-# from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.messages import AIMessage, HumanMessage
-# from model import get_model
 from query_process import retrieve_chunks, web_search_agent
 from doc_ingest import load_vector_store
 from generate_answer import generate_answer

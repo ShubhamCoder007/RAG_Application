@@ -40,5 +40,3 @@ def handle_query(query, llm, vector_db=load_vector_store()):
     context = "\n".join([doc.page_content for doc in relevant_docs])
     return generate_answer(query, context)
 
-
-# print("Resp: ",handle_query("what did krishna say"))

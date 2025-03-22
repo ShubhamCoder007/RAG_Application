@@ -2,8 +2,6 @@ from duckduckgo_search import DDGS
 from langchain.llms import HuggingFacePipeline
 from transformers import pipeline
 from generate_answer import generate_answer
-# from model import get_model
-# llm = get_model()
 
 def web_search_agent(query, llm, max_results=3):
     print("Triggered web agent")

@@ -1,5 +1,5 @@
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_core.messages import AIMessage, HumanMessage
+# from langchain_core.messages import AIMessage, HumanMessage
 
 def generate_answer(query: str, context: str, chat_history: list, llm):
     prompt = ChatPromptTemplate.from_messages([
