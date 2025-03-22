@@ -1,5 +1,6 @@
 from doc_ingest import *
-from query_process import handle_query, load_vector_store
+from chat_history import handle_query
+from model import get_model
 
 # Initialize system
 file_path = r"C:\Users\shubh\Desktop\Workspace\RAG\data\Koushiki-Mukherjee-HR.pdf"
@@ -12,13 +13,13 @@ vector_db = create_vector_store(chunks, vector_path)
 #load vector store
 # vector_db = load_vector_store(vector_path)
 
-# Query example
+llm = get_model()
+
+chat_history = []
 q=" "
 while q!="":
-    # vector_path = input("Enter the path of the doc you want to query:")
-    # fn = vector_path.split("\\")[-1]
     q=input("Enter the query: ")
     if q=="":
         break
-    response = handle_query(q,vector_db)
-    print("Response:\n",response)
+    answer, chat_history = handle_query(q, chat_history, llm, vector_db)
+    print("Response:\n",answer)
